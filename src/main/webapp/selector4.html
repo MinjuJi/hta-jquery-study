@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+</head>
+<body>
+	<h1>jQuery 선택자</h1>
+
+	<div id="box-1">
+		<p>내용1</p>
+		<p>내용2</p>
+		<p>내용3</p>
+		<p>내용4</p>
+	</div>
+	<div id="box-2">
+		<p>내용1</p>
+		<p>내용2</p>
+		<p>내용3</p>
+		<p>내용4</p>
+	</div>
+	<div id="box-3">
+		<p>내용1</p>
+		<p>내용2</p>
+		<p>내용3</p>
+		<p>내용4</p>
+	</div>
+<script src="resources/js/jquery-3.7.1.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("div").css({"border":"1px solid black", "padding":"5px", "margin-bottom":"5px"});
+	
+	// p 중에서 첫번째 자식 찾기
+	$("p:first-child").css("background-color", "lightgreen");
+	
+	// p 중에서 마지막번째 자식 찾기
+	$("p:last-child").css("background-color", "lightblue");
+	
+	// p 중에서 두번째 자식 찾기(nth는 1부터 시작)
+	$("p:nth-child(2)").css("background-color", "orange");
+})
+</script>
+</body>
+</html>

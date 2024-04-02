@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+</head>
+<body>
+	<h1>jQuery 선택자</h1>
+
+	<form>
+		<label>아이디</label>
+		<input type="text" name="id" />
+		<label>비밀번호</label>
+		<input type="password" name="password" />
+		<div>
+			<label>지역</label>
+			<select>
+				<option value="seoul">서울</option>
+				<option value="pusan">부산</option>
+				<option value="gumi" selected>구미</option>
+				<option value="kwangju">광주</option>
+				<option value="daegu">대구</option>
+				<option value="yongin">용인</option>
+			</select>
+		</div>
+		<label>이름</label><br/>
+		<input type="text" name="name" readonly /> 
+		<div>
+			<label>보유기술</label>
+			<input type="checkbox" name="skill" value="java" checked />자바
+			<input type="checkbox" name="skill" value="python" />파이썬
+			<input type="checkbox" name="skill" value="sql" />SQL
+			<input type="checkbox" name="skill" value="network" checked />네트워크
+			<input type="checkbox" name="skill" value="data" checked />데이터분석
+		</div>
+		<div>
+			<label>이력서</label>
+			<input type="file" name="resume" />
+		</div>
+		<div>
+			<label>내용</label><br/>
+			<textarea rows="5" cols="60" name="summary"></textarea>
+		</div>
+		<div>
+			<input type="checkbox" name="agree1" value="y" data-required="y" checked> 개인정보 제공 동의(필수)
+			<input type="checkbox" name="agree2" value="y" data-required="y" checked> 위치정보 제공 동의(필수)
+			<input type="checkbox" name="agree3" value="y" data-required="y"> 이벤트 수신 동의(선택)
+			<input type="checkbox" name="agree4" value="y" data-required="y"> 제3자 개인정보 제공 동의(선택)
+			<input type="checkbox" name="agree5" value="y" data-required="n"> 머캐탕 정보 수신 동의(선택)
+		</div>
+	</form>
+<script src="resources/js/jquery-3.7.1.js"></script>
+<script type="text/javascript">
+$(function(){
+	// 필수 동의 항목의 체크박스 중에서 체크된 것 개수 조회하기
+	let len = $(":checkbox[data-required=y]:checked").length;
+	console.log("필수 동의항목 체크 개수", len);
+})
+</script>
+</body>
+</html>
