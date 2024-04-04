@@ -29,9 +29,9 @@
 		</div>
 		<div>
 			<label>태그</label><br />
-			<input type="text" name="tag" id="tag"/> 
+			<input type="text" name="tag"/> 
 			<button type="button" id="btn-add-tag">추가</button>
-			<div id="box-tag" style="margin-top: 10px; padding: 5px;">
+			<div id="div-tags" style="margin-top: 10px; padding: 5px;">
 				<span>맛있는 토스트 <button type="button" class="btn btn-danger">x</button></span>
 				<span>맛있는 토스트 <button type="button" class="btn btn-danger">x</button></span>
 				<span>맛있는 토스트 <button type="button" class="btn btn-danger">x</button></span>
@@ -52,22 +52,19 @@ $(function() {
 	// <span>태그입력값 <button type="button" class="btn btn-danger btn-sm">X</button></span>
 	// 태그 입력필드의 값을 지운다.
 	$("#btn-add-tag").click(function(){
-			let tag = $("#tag").val();
-			let div = `
-					<span> ${tag} <button type="button" class="btn btn-danger btn-sm">X</button></span>
-			`;
+			let tag = $("input[name=tag]").val();
+			let span = `<span> ${tag} <button type="button" class="btn btn-danger btn-sm">X</button></span>`;
 			
-			$("#box-tag").append(div);
-			$("#tag").val("");
+			$("#div-tags").append(span);
+			$("input[name=tag]").val("");
 	});
 	
 	
 	// 태그의 x버튼을 클릭하면 실행되는 이벤트 핸들러 함수를 등록하기
 	// 이벤트 핸들러 함수에서는 해당 태그 버튼을 삭제한다.
-	$("#box-tag").on("click", "button.btn-danger", function(){
+	$("#div-tags").on("click", "btn-danger", function(){
 			$(this).closest("span").remove();
 	});
-	
 })
 </script>
 </body>

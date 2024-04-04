@@ -10,11 +10,11 @@
 	<div>
 		<div>
 			<label>첫번째 숫자</label><br/>
-			<input type="number" name="num1" value="0" id="number-first"/>
+			<input type="number" name="num1" value="0"/>
 		</div>
 		<div>
 			<label>두번째 숫자</label><br/>
-			<input type="number" name="num2" value="0" id="number-second"/>
+			<input type="number" name="num2" value="0"/>
 		</div>
 		<div>
 			<button id="btn-caculator">계산</button>
@@ -32,13 +32,12 @@ $(function() {
 	// 계산 버튼을 클릭했을 때 실행되는 이벤트 핸들러 함수를 등록하시오.
 	// 이벤트 핸들러 함수에는 입력필드의 값을 읽어서 합계를 구하고, 그 결과값을 아래의 입력필드에 표시하기
 	$("#btn-caculator").click(function(){
-		let num1 = parseInt($("#number-first").val());
-		let num2 = parseInt($("#number-second").val());
+		let num1 = parseInt($("input[name=num1]").val());
+		let num2 = parseInt($("input[name=num2]").val());
 		let total = num1 + num2;
 		
 		$("#result").val(total);
 	});
-	
 })
 </script>
 </body>
