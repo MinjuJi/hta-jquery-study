@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML DOM 조작하기</title>
+<style type="text/css">
+	.normal{
+		opacity: 0.4;
+	}
+	.hightlight{
+		opacity: 1;
+	}
+</style>
+</head>
+<body>
+	<h1>HTML DOM</h1>
+	
+	<div id="div-big-picture">
+		<img src="resources/images/1.jpg" style="width: 400px; height: 500px">
+	</div>
+	<div id="div-thumbnail-picture">
+		<img src="resources/images/1.jpg" class="hightlight" style="width:64px; height:84px">
+		<img src="resources/images/2.jpg" class="normal" style="width:64px; height:84px">
+		<img src="resources/images/3.jpg" class="normal" style="width:64px; height:84px">
+		<img src="resources/images/4.jpg" class="normal" style="width:64px; height:84px">
+	</div>
+
+<script src="resources/js/jquery-3.7.1.min.js"></script>
+<script>
+$(function() {
+	$("#div-thumbnail-picture img").click(function(){
+		let imagepath = $(this).attr("src");
+		$("#div-big-picture img").attr("src", imagepath);
+		
+		$(this).removeClass("normal").addClass("hightlight")
+		.siblings().removeClass("hightlight").addClass("normal");
+	});
+})
+</script>	
+</body>
+</html>

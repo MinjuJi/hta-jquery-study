@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML DOM 조작하기</title>
+<style>
+	div {
+		margin: 15px 0;
+		border: 1px solid black;
+		padding: 15px;
+	}
+	
+	span {
+		border: 1px solid black;
+		padding: 5px;
+	}
+	
+	.active {
+		background-color: lightgreen;
+	}
+</style>
+<style type="text/css">
+	.normal{
+		opacity: 0.4;
+	}
+	.hightlight{
+		opacity: 1;
+	}
+</style>
+</head>
+<body>
+	<h1>HTML DOM</h1>
+	
+	<h3>직원 현황</h3>
+	<div id="box-1">
+		<span class="active">김유신</span>
+		<span>강감찬</span>
+		<span>이순신</span>
+		<span>류관순</span>
+		<span>홍길동</span>
+	</div>
+
+<script src="resources/js/jquery-3.7.1.min.js"></script>
+<script>
+$(function() {
+	$("#box-1 span").click(function(){
+		$(this).addClass("active").siblings().removeClass("active");
+	});
+})
+</script>	
+</body>
+</html>
