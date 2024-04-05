@@ -76,7 +76,7 @@ $(function() {
 		$("#span-text-count").text(len);
 	});
 	
-	// 지원분야항복의 라디오버튼의 체크상태가 변경될 때마다 실행되는 이벤트핸들러 함수를 등록한다.
+	// 지원분야항목의 라디오버튼의 체크상태가 변경될 때마다 실행되는 이벤트핸들러 함수를 등록한다.
 	$(":radio[name=job]").change(function(){
 		let city = $(this).attr("data-city-name");
 		$("#select[name=city]").val(city);
@@ -87,10 +87,10 @@ $(function() {
 		let type= $(this).val();
 		if(type === "0"){
 			$("#div-career").show();
-			$("#div-career input[name=career]").prop("disabled", false);
+			$("#div-career textarea[name=career]").prop("disabled", false);
 		} else{
 			$("#div-career").hide();
-			$("#div-career input[name=career]").prop("disabled", true);
+			$("#div-career textarea[name=career]").prop("disabled", true);
 		}
 	});
 })
