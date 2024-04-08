@@ -77,6 +77,7 @@ $(function() {
 	// 날짜 입력필드에 어제 날짜로 세팅
 	let url = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json";
 	let yesterday = moment().subtract(1, "d").format("YYYY-MM-DD");
+	
 	$("input[name=date]").val(yesterday);
 	
 	$("#btn-get-boxoffice").click(function(){
