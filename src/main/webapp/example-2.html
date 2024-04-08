@@ -62,7 +62,7 @@ $(function() {
 	
 	// 태그의 x버튼을 클릭하면 실행되는 이벤트 핸들러 함수를 등록하기
 	// 이벤트 핸들러 함수에서는 해당 태그 버튼을 삭제한다.
-	$("#div-tags").on("click", "btn-danger", function(){
+	$("#div-tags").on("click", ".btn-danger", function(){
 			$(this).closest("span").remove();
 	});
 })
